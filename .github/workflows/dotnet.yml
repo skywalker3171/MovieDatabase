@@ -22,5 +22,7 @@ jobs:
       working-directory: ./RazorPagesMovie
     - name: Build
       run: dotnet build --no-restore
+      working-directory: ./RazorPagesMovie
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: ./RazorPagesMovie
