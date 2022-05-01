@@ -26,3 +26,17 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
       working-directory: ./RazorPagesMovie
+    
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        # Artifact name
+        name: RazorPagesMovie
+        # A file, directory or wildcard pattern that describes what to upload
+        path: ./RazorPagesMovie/*
+        # The desired behavior if no files are found using the provided path.
+
+        if-no-files-found: warn
+        # Duration after which artifact will expire in days. 0 means using default retention.
+        retention-days: 0
+        
